@@ -2,6 +2,7 @@
 const todoBtn=document.getElementById("my-button");
 let todoList=document.getElementById("list");
 
+
 todoBtn.addEventListener("click", function() {
   let textinput= document.getElementById("task").value;
 
@@ -23,9 +24,11 @@ todoBtn.addEventListener("click", function() {
       trashButton.addEventListener("click", function(){
         textinput=document.getElementById("task").value;
 
-        var list = document.getElementById("list");
+        const list = document.getElementById("list");
        list.removeChild(list.childNodes[0]);
 
       })
     }
   })
+
+  
