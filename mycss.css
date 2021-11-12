@@ -55,7 +55,7 @@ input::placeholder {
 .todo-item {
   padding: 0rem 0.5rem;
 }
-JavaScript Todo list project .todo {
+.todo {
   margin: 0.5rem;
   list-style: none;
   background-color: rgb(255, 254, 254);
