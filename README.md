@@ -1,1 +1,3 @@
-# JavaScript2
+# JavaScript
+
+### Todo list project
