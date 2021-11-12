@@ -1,46 +1,31 @@
 /*Här skriver ni koden*/
-const input = document.getElementById('task')
-const todoList = document.getElementById('list')
-const  todoBtn = document.getElementById("my-button")
+const todoBtn=document.getElementById("my-button");
+let todoList=document.getElementById("list");
 
-todoBtn.addEventListener("click", addTodo);
-todoList.addEventListener("click", deleteCheck);
-
-function addTodo(event){
-    event.preventDefault();
-
-    // Toto Div
-
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
-    //li
-    const newTodo = document.createElement('li');
-    newTodo.innerText = input.value;
-    newTodo.classList.add('todo-item');
-    todoDiv.appendChild(newTodo);
-    console.log(todoBtn);
-
-    // Detete button
-
-    const trashButton = document.createElement('button');
-    trashButton.innerHTML ='X';
-    trashButton.classList.add("delete");
-    todoDiv.appendChild(trashButton);
-
-    // Append to list
-
-    todoList.appendChild(todoDiv);
-    input.value ="";
-}
+todoBtn.addEventListener("click", function() {
+  let textinput= document.getElementById("task").value;
 
 
-function deleteCheck(e) {
-    const item = e.target;
-
-    // Delete TODo
-    if(item.classList[0] === "delete"){
-        const todo =item.parentElement;
-        todo.classList.add('fall');
-        todo.remove();
+    if (textinput === ""){
+      alert ("Text")
     }
-}
+    else {
+
+      const newTodo= document.createElement("LI"); //  Li
+      newTodo.innerText =textinput;
+      todoList.appendChild(newTodo);
+      document.getElementById("task").value= "";
+
+      const trashButton=document.createElement("button");
+      trashButton .innerHTML="x";
+      newTodo.appendChild(trashButton).className="delete";
+
+      trashButton.addEventListener("click", function(){
+        textinput=document.getElementById("task").value;
+
+        var list = document.getElementById("list");
+       list.removeChild(list.childNodes[0]);
+
+      })
+    }
+  })
