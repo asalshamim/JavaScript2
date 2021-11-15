@@ -13,7 +13,7 @@ todoBtn.addEventListener("click", function() {
     else {
       
 
-      const newTodo= document.createElement("LI"); //  Li
+      const newTodo= document.createElement("li"); //  Li
       newTodo.innerText =textinput;
       todoList.appendChild(newTodo);
       document.getElementById("task").value= "";
