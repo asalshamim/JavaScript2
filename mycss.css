@@ -36,15 +36,18 @@ input::placeholder {
 }
 
 #my-button {
+  border: 1px solid rgb(26, 26, 53);
   position: relative;
   background-color: #b9a8bd;
   font-size: 1.5rem;
+  display: inline-block;
   margin-top: 5px;
   padding: 1rem 1rem;
   cursor: pointer;
   outline: none;
   border-radius: 8px;
 }
+
 ul {
   list-style: none;
 }
@@ -53,20 +56,23 @@ ul {
   margin: 0.5rem;
   padding-left: 8px;
   display: flex;
-  opacity: 1;
-  transition: opacity 0.5s ease;
-
   justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
 }
-#list {
+li {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 li:hover {
-  opacity: 0.7;
+  opacity: 0.8;
+}
+li:hover .delete {
+  visibility: visible;
 }
 
 .delete {
+  visibility: hidden;
   background-color: rgb(228, 228, 228);
   background: #ff6f47;
   border: none;
