@@ -4,6 +4,8 @@ const todoList =document.getElementById("list");
 
 
 
+
+
 todoBtn.addEventListener("click", function() {
   let textinput= document.getElementById("task").value;
 
@@ -18,6 +20,8 @@ todoBtn.addEventListener("click", function() {
       todoList.appendChild(newTodo);
       document.getElementById("task").value= "";
 
+      // Delete Button
+
       const trashButton=document.createElement("button");
       trashButton .innerHTML="x";
       newTodo.appendChild(trashButton).className="delete";
@@ -29,51 +33,27 @@ todoBtn.addEventListener("click", function() {
        list.removeChild(list.childNodes[0]);
 
       
-      
-       
+
+
 
       })
       
 
     }
+
+    
+    
   
     
   })
+
+ 
+  
+    
+     
+
+
+
   
       
- // Save list
-
- function saveList() {
-  let toDos = [];
-  for(let i=0; i<todoList.children.length; i++){
-    let toDo = todoList.children.item(i);
-    
-
-    let todoInfo ={
-      task: todoList.innerText,
-      class: todoList.children[i].className
-    };
-    
-    toDos.push(todoInfo);
-  }
-  localStorage.setItem("toDos", JSON.stringify(toDos));
  
-}
-
-function loadList() {
-  if(localStorage.getItem("toDos") != null){
-    let toDos = JSON.parse(localStorage.getItem("toDos"));
-
-    for (let i= 0; i< toDos.length; i++){
-      let toDo = toDos[i];
-      newTodoItem(toDo.task, toDo.class);
-    }
-  }
-  loadList();
-
-
-}
-function saveCount(){
-  saveList();
-  loadList();
-}
